@@ -1,11 +1,14 @@
+from typing import Type, Union
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.base import Model
 
-class Book(models.Model):
-    numero_id = models.ForeignKey(int, unique=True, on_delete=models.CASCADE)
-    nome_livro = models.TextField()
-    autores = models.TextField()
-    situacao = models.CharField()
+class Books(models.Model):
+    numero_id = models.ForeignKey(on_delete=models.CASCADE,max_length=4, unique=True, blank=False, null=False)
+    nome_livro = models.TextField(blank=False, null=False)
+    slug = models.SlugField(nome_livro)
+    autores = models.TextField(blank=False, null=False)
+    situacao = models.CharField(max_length=10)
     cadastrado_em = models.DateTimeField(auto_now_add=True)
     ultima_alteracao = models.DateTimeField(auto_now=True)
     responsavel_alteracao = models.CharField(User)
