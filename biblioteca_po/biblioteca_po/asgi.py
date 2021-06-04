@@ -1,5 +1,5 @@
 """
-ASGI config for biblioteca_paula_ortis project.
+ASGI config for biblioteca_po project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblioteca_paula_ortis.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblioteca_po.settings')
 
 application = get_asgi_application()
