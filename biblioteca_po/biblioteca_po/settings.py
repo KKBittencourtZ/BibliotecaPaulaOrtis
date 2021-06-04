@@ -138,7 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backend.ModelBackend',
-    'allauth.account.auth_backend.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 SITE_ID = 1
