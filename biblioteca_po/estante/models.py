@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib.auth.models import User
 from django.db import models
 
 class Books(models.Model):
@@ -9,4 +9,4 @@ class Books(models.Model):
     # situacao = models.CharField(max_length=10)
     cadastrado_em = models.DateTimeField(auto_now_add=True)
     ultima_alteracao = models.DateTimeField(auto_now=True)
-    responsavel_alteracao = models.ForeignKey(admin, on_delete=models.CASCADE)
+    responsavel_alteracao = models.ForeignKey(User, on_delete=models.CASCADE)
