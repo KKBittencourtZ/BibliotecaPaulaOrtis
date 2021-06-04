@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Books(models.Model):
-    numero_id = models.ForeignKey(on_delete=models.CASCADE,max_length=4, unique=True, blank=False, null=False)
+    numero_id = models.ForeignKey(primary_key=True ,on_delete=models.CASCADE,max_length=4, unique=True, blank=False, null=False)
     nome_livro = models.TextField(blank=False, null=False)
     slug = models.SlugField(nome_livro)
     autores = models.TextField(blank=False, null=False)
